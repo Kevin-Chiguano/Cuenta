@@ -1,3 +1,8 @@
+/* Author Kevin
+ * Version 1.0
+ * Fecha 2024-05-14
+ * Materia: Lenguajes de Programacion 2
+ */
 package org.Kevin.Cuenta;
 /*
 */
@@ -60,7 +65,8 @@ public class Cuenta {
     * @param saldo Parametro que define la cantiad de dinero a retirar de tu cuenta
     * */
     public void retirar(float cantidad) {
-        float nuevoSaldo=saldo-cantidad;
+        float nuevoSaldo;
+                nuevoSaldo=saldo-cantidad;
         /*Si la cantidad a retirar supera el saldo
          * el retiro no se puede actualizar*/
         if(nuevoSaldo>=0){
@@ -79,7 +85,7 @@ public class Cuenta {
         * mensual*/
         float tasaMensual=tasaAnual/12;
         /*convertimos a inero el interes*/
-        float interesMensual=saldo+tasaMensual;
+        float interesMensual=saldo*tasaMensual;
         /*actualizamos el saldo aplicado
         * el interes mensual*/
         saldo+=interesMensual;
@@ -93,5 +99,32 @@ public class Cuenta {
         calcularInteres();
 
     }
+
+    /*Metodo que imprime los valores del saldo actual
+    * comision mensual y Numero de transacciones*/
+    public void imprimir() {
+        System.out.println("Saldo: " + saldo);
+        System.out.println("Comisión Mensual: "+comisionMensual);
+        System.out.println("Número de transacciones realizadas: " + (numeroConsignacion + numeroRetiro));
+    }
+
+    //Metodos get's
+    public int getNumeroRetiro() {
+        return numeroRetiro;
+    }
+
+    public float getSaldo() {
+        return saldo;
+    }
+
+    public float getComisionMensual() {
+        return comisionMensual;
+    }
+
+    public int getNumeroConsignacion() {
+        return numeroConsignacion;
+    }
+
+
 
 }

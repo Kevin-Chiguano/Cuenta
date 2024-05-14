@@ -1,5 +1,9 @@
+/* Author Kevin
+ * Version 1.0
+ * Fecha 2024-05-14
+ * Materia: Lenguajes de Programacion 2
+ */
 package org.Kevin.Cuenta;
-
 /*Esta case denominada cuenta de ahorros modela una cuenta de ahorros
 que es una subclase de Cuenta. Tiene un nuevo: activa.*/
 
@@ -28,6 +32,12 @@ public class CuentaAhorros extends Cuenta{
         }
     }
 
+    /*Metodo que permite depositar una cantidad de dinero*/
+    public void depositar(float cantidad) {
+        if(estado)
+            super.depositar(cantidad);
+    }
+
     /*Metodo que recibe una cantidad de dinero a retirar
     * y actualizar el estado de la cuenta
     * @param saldo, parametro que defina la cantidad a retirar
@@ -39,7 +49,25 @@ public class CuentaAhorros extends Cuenta{
             super.retirar(cantidad);
     }
     //depositar extracto mensual e imprimir y terminar la cuenta corriente
-    public void depositar(float cantidad) {
-        super.depositar(cantidad);
+
+    public void extractoMensual(){
+        if(getNumeroRetiro()>4){
+            super.retirar(getSaldo()-1);
+        }
+        super.extractoMensual();
+        if(getSaldo()<=10)
+            estado=false;
+        else
+            estado=true;
     }
+    /*Metodo que imprime los valores del saldo actual
+     * estado de la cuenta, Numero de transacciones y
+     * comision mensual*/
+    public void imprimir(){
+        System.out.println("El saldo de la cuenta es: "+getSaldo());
+        System.out.println("El estado de la cuenta es: "+estado);
+        System.out.println("La comision mensual: "+getComisionMensual());
+        System.out.println("Numero de Transacciones realizadas: "+(getNumeroRetiro()+getNumeroConsignacion()));
+    }
+
 }
