@@ -27,10 +27,18 @@ public class CuentaCorriente extends Cuenta{
      * @param cantidad La cantidad a retirar de la cuenta.
      */
     public void retirar(float cantidad){
-        super.retirar(cantidad);
-        if(cantidad>=getSaldo()){
-            sobreGiro=-1*(getSaldo()-cantidad);
+
+        if(cantidad<=getSaldo()){
+            super.retirar(cantidad);
+
+
+        }else{
+            float exedente=cantidad-getSaldo();
+            super.retirar(getSaldo());
+            sobreGiro+=exedente;
         }
+
+
     }
 
     /*
@@ -40,7 +48,7 @@ public class CuentaCorriente extends Cuenta{
     @Override
     public void depositar(float cantidad){
         if(sobreGiro>0){
-            if(sobreGiro>=cantidad){
+            if(cantidad<=sobreGiro){
                 sobreGiro-=cantidad;
             }
             else{
@@ -68,7 +76,7 @@ public class CuentaCorriente extends Cuenta{
      */
     public void imprimir(){
         System.out.println("Saldo de la cuenta: "+getSaldo());
-        System.out.println("Comision Mensual: "+getComisionMensual());
+        System.out.println("Comision Mensual: "+comisionMensual);
         System.out.println("Numero de Transacciones realizadas: "+(getNumeroRetiro()+getNumeroConsignacion()));
         if(sobreGiro>0)
             System.out.println("Tiene un sobregiro de: "+sobreGiro);

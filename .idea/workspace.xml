@@ -82,7 +82,11 @@
       <updated>1715352408653</updated>
       <workItem from="1715352409737" duration="130000" />
       <workItem from="1715605502145" duration="6720000" />
-      <workItem from="1715637116755" duration="15293000" />
+      <workItem from="1715637116755" duration="16218000" />
+      <workItem from="1715692224603" duration="4252000" />
+      <workItem from="1715698668794" duration="8389000" />
+      <workItem from="1715739294219" duration="10000" />
+      <workItem from="1716213607753" duration="731000" />
     </task>
     <task id="LOCAL-00001" summary="Ejercicio Cuenta con Herencia">
       <option name="closed" value="true" />
@@ -100,7 +104,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715612206157</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Ejercicio Cuenta con Herencia">
+      <option name="closed" value="true" />
+      <created>1715664546993</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1715664546993</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -111,7 +123,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>

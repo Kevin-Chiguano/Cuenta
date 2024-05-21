@@ -23,7 +23,7 @@ public class Cuenta {
     /*Atributo que define el numero de retiros
      * de una cuenta bancaria
      */
-    private int numeroRetiro=0;
+    public int numeroRetiro=0;
     /*Atributos que define la tasa anual de intereses
      *de una cuenta bancaria
      */
@@ -31,7 +31,7 @@ public class Cuenta {
     /*Atributo que defina la comision
      *mensual que se cobra a una cuenta bancaria.
      */
-    private float comisionMensual=0;
+    public float comisionMensual=0;
 
     /*constructor de la clase cuenta
     * @param saldo Parametro que define el saldo de la cuenta

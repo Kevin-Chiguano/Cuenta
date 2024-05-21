@@ -21,15 +21,12 @@ public class CuentaAhorros extends Cuenta{
         super(saldo, tasaAnual);
 
         //Condicional para saber el si la cuenta se encueta activa o inactiva
-        if(saldo<=10){
-
+        System.out.println(saldo);
+        if(getSaldo()<10)
             //se desactiva la cuenta
             estado=false;
-        }
-        else{
-
+        else
             estado=true;
-        }
     }
 
     /*Metodo que permite depositar una cantidad de dinero*/
@@ -51,8 +48,9 @@ public class CuentaAhorros extends Cuenta{
     //depositar extracto mensual e imprimir y terminar la cuenta corriente
 
     public void extractoMensual(){
-        if(getNumeroRetiro()>4){
-            super.retirar(getSaldo()-1);
+        if(numeroRetiro>4){
+            //super.retirar(getSaldo()-1);
+            comisionMensual=comisionMensual+1;
         }
         super.extractoMensual();
         if(getSaldo()<=10)
@@ -65,8 +63,8 @@ public class CuentaAhorros extends Cuenta{
      * comision mensual*/
     public void imprimir(){
         System.out.println("El saldo de la cuenta es: "+getSaldo());
-        System.out.println("El estado de la cuenta es: "+estado);
-        System.out.println("La comision mensual: "+getComisionMensual());
+        System.out.println("El estado de la cuenta es: "+(estado));
+        System.out.println("La comision mensual: "+comisionMensual);
         System.out.println("Numero de Transacciones realizadas: "+(getNumeroRetiro()+getNumeroConsignacion()));
     }
 
